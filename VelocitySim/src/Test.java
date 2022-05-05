@@ -44,11 +44,32 @@ class Graph{
 	}
 }
 class Shapes{
-	public static byte[][] circle(byte[][]graph,int cor[]){
-		for(int a=0;a<360;a++){
-			int x= (int)Math.round(cor[2]*Math.cos(a))+cor[0];
-			int y= (int)Math.round(cor[2]*Math.sin(a))+cor[1];
-			Graph.setPoint(graph,new int[]{x,y});
+	public static byte[][] circle(byte[][]graph,double cor[]){
+		for(int a=0;a<3600;a++){
+			int x= (int)(Math.round(cor[2]*Math.cos(a))+cor[0]);
+			int y= (int)(Math.round(cor[2]*2*Math.sin(a))+cor[1]);
+			graph=Graph.setPoint(graph,new int[]{x,y});
+		}
+		return graph;
+	}
+
+	public static byte[][] line(byte[][]graph,int cor[]){
+		int[]start={cor[0],cor[1]};
+		int[]end={cor[2],cor[3]};
+		while(start[0]!=end[0] && start[1]!=end[1]){
+			if(start[0]>=end[0] && start[1]>=end[1]){
+				end[0]++;
+				end[1]++;
+			}
+			else if (start[0]<=end[0] && start[1]<=end[1]){
+				start[0]++;
+				start[1]++;
+			}
+
+			graph=Graph.setPoints(graph,new int[][]{start,end});
+
+
+
 		}
 		return graph;
 	}
@@ -64,12 +85,13 @@ class VelocitySimulation{
 	}
 	
 	public void  test(){
-		int rows=200;
-		int cols=200;
+		int rows=151;
+		int cols=33;
 		byte[][] graph=Graph.generate(rows,cols);
-		graph=Shapes.circle(graph,new int[]{cols/2,rows/2,20});
-		graph=Shapes.circle(graph,new int[]{cols/2+4,rows/2+4,20});
-		Graph.print(graph,' ','V');
+		int a=0;
+		graph=Shapes.circle(graph,new double[]{cols/2,rows/2,5});
+		graph=Shapes.line(graph,new int[]{5,1,5,5});
+		Graph.print(graph,' ','⬤');
 	}
 
 
