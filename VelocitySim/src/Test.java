@@ -45,7 +45,8 @@ class Graph{
 }
 class Shapes{
 	public static byte[][] circle(byte[][]graph,double cor[]){
-		for(int a=0;a<3600;a++){
+		graph=Graph.setPoint(graph,new int[]{(int)cor[0],(int)cor[1]});
+		for(int a=0;a<2;a++){
 			int x= (int)(Math.round(cor[2]*Math.cos(a))+cor[0]);
 			int y= (int)(Math.round(cor[2]*2*Math.sin(a))+cor[1]);
 			graph=Graph.setPoint(graph,new int[]{x,y});
