@@ -1,0 +1,37 @@
+voucher 	=	{customer name , customer address ,customer phone , customer_liability , product_name ,
+			product_color , product_price , order_date ,no_of_products , 
+			total_cost , paid_cost , delivery_address}
+
+inventory	= 	{address , product_name , color ,stock_in_date , no_of_products_in_stock}
+
+
+
+
+first-normalization
+	voucher 	=	{customer name , customer address ,customer phone , customer_liability , 
+				product_name , product_color , product_price , order_date ,total , 
+				no_of_products , paid_cost , delivery_address}
+
+	inventory	= 	{address , product_name , color ,stock_in_date , no_of_products_in_stock}
+
+
+second-normalization
+	customer	={ customer_id , name , address , phone , liability}
+	product		= {product_id , name , color , price } 
+	order		={ order_id , customer_id , product_id , order_date}
+	voucher		= {voucher_id , order_id , no_of_products ,total_cost , paid_cost , delivery_address}
+	inventory 	={ inventory_id , address , product_id , stock_in_date , no_of_products_in_stock}
+
+
+
+third-normalization
+	customer	= {customer_id , name , address , phone , liability}
+	product		= {product_id , name , color , price} 
+	order		= {order_id , customer_id , product_id} 
+	voucher		= {voucher_id , order_id , order_date , no_of_products ,total_cost , paid_cost , delivery_address}
+	inventory 	= {inventory_id , address , product_id , stock_in_date , no_of_products_in_stock}
+	customer_orders	= {voucher_id , customer_id}
+
+
+
+
