@@ -1,0 +1,114 @@
+@import url('http://fonts.cdnfonts.com/css/romantic');
+.body{
+	margin:0;
+}
+/*(x,y)=(40,30)*/
+.LoginBox{
+	min-width:400px;
+	max-height:12cm;
+	width:30%;
+	height:50%;
+	border:1px solid black;
+
+	margin-left:40%;
+	margin-top:8%;
+
+	display:grid;
+
+	grid-template-columns:repeat(5,1fr);
+	grid-template-rows:repeat(12,1fr);
+	
+	background-color:#f5f5f5;
+}
+.LoginBox div{
+/*	border:1px dotted red;*/
+}
+
+.title,.caption{
+	border:1px dotted black;
+}
+
+.title{
+	grid-column-start:1;
+	grid-column-end:6;
+	text-align:center;
+	font:30px roboto;
+	
+}
+
+.caption{
+
+	grid-column-start:1;
+	grid-column-end:6;
+	grid-row-start:2;
+	grid-row-end:4;
+	text-align:center;
+	font:30px 'Romantic';
+	line-height:2cm;
+}
+
+.name{
+	grid-column-start:1;
+	grid-column-end:3;
+	grid-row-start:4;
+	grid-row-end:6;
+	
+	margin:auto;
+}
+.ipname{
+
+	grid-column-start:3;
+	grid-column-end:5;
+	grid-row-start:4;
+	grid-row-end:6;
+
+	margin:auto;
+}
+
+.password{
+	grid-column-start:1;
+	grid-column-end:3;
+	grid-row-start:6;
+	grid-row-end:8;
+	
+	margin:auto;
+}
+
+.ippassword{
+
+	grid-column-start:3;
+	grid-column-end:5;
+	grid-row-start:6;
+	grid-row-end:8;
+	margin:auto;
+}
+
+
+.signupBt{
+	grid-column-start:5;
+	grid-column-end:6;
+	grid-row-start:11;
+	grid-row-end:12;
+	background-image: linear-gradient(to top left,red,blue,green);
+	text-align:center;
+	color:white;
+}	
+
+
+
+
+
+.loginBt{
+	grid-column-start:2;
+	grid-column-end:4;
+	grid-row-start:9;
+	grid-row-end:10;
+	background-image: linear-gradient(to top left,red,blue,green);
+	text-align:center;
+	color:white;
+}	
+
+
+
+
+

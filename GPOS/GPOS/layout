@@ -1,0 +1,8 @@
+screen
+split -v
+focus
+screen 
+split
+focus
+screen
+focus

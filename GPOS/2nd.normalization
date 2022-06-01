@@ -1,0 +1,43 @@
+user
+	user_id
+	user_name
+	user_email
+	password
+
+shop
+	shop_id
+	shop_name
+
+
+emp
+	user_id
+	shop_id
+	emp_work_start_time
+	emp_work_end_time
+
+
+
+inventory
+	goods_id	
+	goods_name
+	goods_size
+	goods_price
+	current_inventory_goods_amount
+	
+
+stock
+	date
+	goods_id
+	stock_in_amount
+	price
+	stock_out_amount
+
+
+voucher
+	date_time
+	voucher_id
+	goods_id
+	quantity
+	
+		
+	
